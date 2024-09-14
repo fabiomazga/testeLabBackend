@@ -9,24 +9,13 @@
 
     <!-- Configuração do Servlet -->
     <servlet>
-        <servlet-name>MainServlet</servlet-name>
-        <servlet-class>com.testlab.servlets.MainServlet</servlet-class>
+        <servlet-name>AnamnesesServlet</servlet-name>
+        <servlet-class>com.testlab.AnamnesesServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>MainServlet</servlet-name>
-        <url-pattern>/main</url-pattern>
-    </servlet-mapping>
-
-    <!-- Configuração de outro Servlet de exemplo -->
-    <servlet>
-        <servlet-name>ExampleServlet</servlet-name>
-        <servlet-class>com.testlab.servlets.ExampleServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>ExampleServlet</servlet-name>
-        <url-pattern>/example</url-pattern>
+        <servlet-name>AnamnesesServlet</servlet-name>
+        <url-pattern>/anamneses</url-pattern>
     </servlet-mapping>
 
     <!-- Arquivo de boas-vindas -->
@@ -34,23 +23,5 @@
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-
-    <!-- Parâmetros de contexto -->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/applicationContext.xml</param-value>
-    </context-param>
-
-    <!-- Filtros opcionais (se necessário) -->
-    <!-- 
-    <filter>
-        <filter-name>ExampleFilter</filter-name>
-        <filter-class>com.testlab.filters.ExampleFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>ExampleFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    -->
 
 </web-app>

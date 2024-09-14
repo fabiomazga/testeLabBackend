@@ -8,8 +8,16 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
+    <name>TestLabBackend</name>
+    <description>Backend para o projeto TestLab</description>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
     <dependencies>
-        <!-- Dependência do Servlet API -->
+        <!-- Dependência para Servlets -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -17,42 +25,44 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Dependência do JSTL -->
+        <!-- Dependência para JSTL -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
 
-        <!-- Tomcat Embedded -->
+        <!-- Dependência para o webapp-runner -->
         <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-core</artifactId>
-            <version>9.0.65</version>
+            <groupId>com.github.jsimone</groupId>
+            <artifactId>webapp-runner</artifactId>
+            <version>8.5.11.3</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
     <build>
         <finalName>TestLabBackend</finalName>
         <plugins>
-            <!-- Plugin Maven para gerar o arquivo WAR -->
+            <!-- Plugin para empacotar o projeto como WAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.3</version>
+                <version>3.3.1</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
 
-            <!-- Plugin Tomcat para rodar localmente -->
+            <!-- Plugin para rodar o Tomcat -->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <path>/</path>
-                    <port>8080</port>
+                    <url>http://localhost:8080/manager/text</url>
+                    <server>TomcatServer</server>
+                    <path>/TestLabBackend</path>
                 </configuration>
             </plugin>
         </plugins>
