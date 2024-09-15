@@ -30,7 +30,7 @@
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-websocket</artifactId>
-            <version>9.0.65</version>
+            <version>9.0.86</version>
         </dependency>
 
         <!-- Dependências de teste -->
