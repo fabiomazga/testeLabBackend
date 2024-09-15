@@ -4,9 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.testlab</groupId>
     <artifactId>TestLabBackend</artifactId>
-    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>TestLabBackend</name>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -22,22 +21,20 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Dependência do Tomcat Embedded -->
+        <!-- Dependência Tomcat Embedded -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <version>2.7.1</version>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>9.0.64</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <version>9.0.64</version>
         </dependency>
     </dependencies>
 
     <build>
         <finalName>TestLabBackend</finalName>
-        <plugins>
-            <!-- Plugin do Spring Boot para criar um jar executável com Tomcat Embedded -->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
     </build>
 </project>
